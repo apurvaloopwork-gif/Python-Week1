@@ -18,7 +18,7 @@ import json
 #   f.write(s)
   
   
-#read the jsaon file
+#read the json file
 
 f=open("demo1.json","r")
 s = f.read()
