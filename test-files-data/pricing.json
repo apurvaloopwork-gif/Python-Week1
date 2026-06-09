@@ -1,0 +1,10 @@
+{
+  "basic_website": 8000,
+  "full_website": 12000,
+  "website_plus_bot": 18000,
+  "monthly_retainer": 2500,
+  "discounts": {
+    "first_client_in_area": 0.10,
+    "annual_prepay": 0.15
+  }
+}
