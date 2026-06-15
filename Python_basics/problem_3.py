@@ -35,4 +35,41 @@ leads = [
     {"name": "Iron Paradise Vile Parle", "monthly_revenue": 180000, "has_website": False, "google_reviews": 28},
 ]
 
+def score_lead(lead):
+    score_counter = 0
 
+    if 100000 <= lead["monthly_revenue"] <= 600000:
+        score_counter += 30
+
+    if lead["has_website"] == False:
+        score_counter += 20
+
+    if lead["google_reviews"] >= 10:
+        score_counter += 20
+
+    if 10 <= lead["google_reviews"] <= 100:
+        score_counter += 30
+
+    return score_counter
+
+# print(score_lead(leads[0]))
+
+
+already_scored = []
+
+for lead in leads:
+   score = score_lead(lead)
+
+   if score >= 60:
+      already_scored.append((score,lead["name"]))
+
+
+# print(already_scored)
+
+
+already_scored.sort(reverse=True)
+
+# print(already_scored)
+
+for score,name in already_scored:
+    print(f"[{score}] {name}")

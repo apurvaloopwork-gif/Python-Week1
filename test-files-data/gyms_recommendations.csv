@@ -1,0 +1,5 @@
+name,city,score,package,base_price,discount_applied,final_price
+Gold's Gym Andheri,Mumbai,100,website_plus_bot,18000,10%,16200
+Anytime Fitness Bandra,Mumbai,80,full_website,12000,0%,12000
+Iron Paradise Vile Parle,Mumbai,100,website_plus_bot,18000,0%,18000
+Body Sculpt Vashi,Navi Mumbai,100,website_plus_bot,18000,10%,16200

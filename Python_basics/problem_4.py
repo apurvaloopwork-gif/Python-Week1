@@ -29,10 +29,47 @@
 # Input: '1234567890' -> None (invalid start digit)
 # ```
 
-# ---
-
+  
+  
+  
+  
+  
 def clean_phone(raw):
-  if(raw[0]==6 or 7 or 8 or 9):
-    print(f"Input:{raw} is valid ")
+  phone = raw.replace(" ","").replace("-","").replace("+","")
+  
+  if phone[:2] == "91":
+    phone = phone[2:]
+    
+  if len(phone) == 11 and phone[0]:
+    phone = phone[1:]
+    
+  if len(phone) != 10:
+    return None
+  
+  if phone[0] not in "6789":
+    return None 
+  
+  return phone 
 
 
+# print(clean_phone( "+91 98765 43210"))
+
+test_inputs = [
+    "+91 98765 43210",
+    "9876543210",
+    "098765-43210",
+    "+91-98765 43210",
+    "12345",
+    "1234567890",
+    "+91 8765432109",
+    "abc",
+    "",
+]
+
+for phone in test_inputs:
+    result = clean_phone(phone)
+
+    if result:
+        print(f"Input: '{phone}' -> {result}")
+    else:
+        print(f"Input: '{phone}' -> None")
